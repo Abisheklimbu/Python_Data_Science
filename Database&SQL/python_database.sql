@@ -57,3 +57,68 @@ DESCRIBE students;
 ALTER TABLE students MODIFY COLUMN Age int;
 DESCRIBE students;
 
+USE SCHOOL;
+
+
+-- Table Contraints 
+CREATE TABLE students(
+id int not null unique primary key,
+s_name varchar(50) not null,
+class int not null,
+age int not null
+);
+describe students;
+
+-- AUTO_INCREMENT (ID INT AUTO_INCREMENT) FOR GOING IN A SEQUENCE 1,2,3....,N. 
+
+-- INSERT RECORDS INTO TABLE 
+INSERT INTO students(id, s_name, class, age)
+VALUES
+(1, 'Abishek', 10, 16),
+(2, 'Nishan', 9, 15),
+(3, 'Manish', 8, 14),
+(4, 'Nima', 7, 13),
+(5, 'Manisha', 6, 12),
+(6, 'Dipa', 5, 11); 
+
+-- SELECT COMMAND
+--  SELECT ALL FROM TABLE 
+SELECT * FROM students;
+
+-- SELECT ONLY ONE COLUMN
+SELECT s_name FROM students;
+
+-- SELECT TWO COLUMN FROM TABLE 
+SELECT id,s_name FROM students;	
+
+-- SELECT UNIQUE ONES 
+SELECT DISTINCT id, s_name, class FROM students;
+
+-- LIMIT IN SELECTION LIST ONLY FIRST 3 ROWS
+SELECT * FROM students LIMIT 3;
+
+-- SKIP THE FIRST 3 ROW -- OFFSET
+SELECT * FROM students LIMIT 3 OFFSET 3;
+
+-- SORT DATA USING ORDER BY 
+SELECT * FROM students ORDER BY class,age asc;
+
+-- WHERE FOR CONDITIONS 
+SELECT * FROM students WHERE id = 1;
+
+-- students age >= 13
+SELECT * FROM students WHERE age >= 13;
+
+-- students age < 13
+SELECT * FROM students WHERE age < 13;
+
+-- not 16 year old
+SELECT * FROM students WHERE age != 16;
+
+-- STRING 
+SELECT * FROM students WHERE s_name = "Abishek";
+
+
+
+
+

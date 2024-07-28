@@ -118,7 +118,54 @@ SELECT * FROM students WHERE age != 16;
 -- STRING 
 SELECT * FROM students WHERE s_name = "Abishek";
 
+-- LOGICAL OPERATOR 
+-- AND OPERATOR 
+SELECT * FROM students WHERE class > 7 AND age < 15;
+
+-- OR OPERATOR 
+SELECT * FROM students WHERE class > 7 OR age > 15;
+
+-- NOT OPERATOR 
+SELECT * FROM students WHERE NOT s_name = "Abishek";
+
+-- BETWEEN OPERATOR 
+SELECT * FROM students WHERE age BETWEEN 13 AND 15;
+
+-- IN 
+SELECT * FROM students WHERE s_name IN ("Abishek","Nishan");
+
+-- LIKE
+SELECT * FROM students WHERE s_name LIKE 'a%';
+
+SELECT * FROM students WHERE s_name LIKE '%a';
+
+SELECT * FROM students WHERE s_name LIKE '%im%';
 
 
+-- UPDATE AND DELETE 
+UPDATE students  SET class = 8 WHERE id = 4;
 
+UPDATE students SET s_name = "Sita" WHERE id = 5;
+
+SELECT * FROM students;
+
+DELETE FROM students WHERE id = 6;
+
+-- AGGREGATE
+-- COUNT 
+SELECT DISTINCT s_name FROM students;
+SELECT COUNT(DISTINCT s_name) FROM students;
+SELECT COUNT(DISTINCT s_name) as 'Uniqe_Name' FROM students;
+
+-- MAX
+SELECT MAX(DISTINCT class) as "Maximum_class" FROM students;
+
+-- MIN 
+SELECT MIN(DISTINCT class) as "Minimum_class" FROM students;
+
+-- AVG 
+SELECT AVG(age) as "Average" FROM students WHERE class = 8;
+
+-- SUM
+SELECT SUM(DISTINCT class) as "SUM" FROM students;
 

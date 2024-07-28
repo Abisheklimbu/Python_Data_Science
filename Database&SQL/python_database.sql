@@ -143,7 +143,7 @@ SELECT * FROM students WHERE s_name LIKE '%im%';
 
 
 -- UPDATE AND DELETE 
-UPDATE students  SET class = 8 WHERE id = 4;
+UPDATE students SET class = 8 WHERE id = 4;
 
 UPDATE students SET s_name = "Sita" WHERE id = 5;
 

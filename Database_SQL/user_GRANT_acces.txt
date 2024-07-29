@@ -1,0 +1,93 @@
+Last login: Mon Jul 29 08:36:02 on ttys000
+(base) abisheklimbu@Abisheks-MacBook-Air ~ % mysql -u abishek -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 13
+Server version: 8.0.37 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| performance_schema |
+| SCHOOL             |
++--------------------+
+3 rows in set (0.01 sec)
+
+mysql> SHOW TABLES;
+ERROR 1046 (3D000): No database selected
+mysql> USE SCHOOL;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> SHOW TABLES;
++------------------+
+| Tables_in_school |
++------------------+
+| marks            |
+| students         |
++------------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM students;
++----+---------+-------+-----+
+| id | s_name  | class | age |
++----+---------+-------+-----+
+|  1 | Abishek |    10 |  16 |
+|  2 | Nishan  |     9 |  15 |
+|  3 | Manish  |     8 |  14 |
+|  4 | Nima    |     8 |  13 |
+|  5 | Sita    |     6 |  12 |
++----+---------+-------+-----+
+5 rows in set (0.00 sec)
+
+mysql> SELECT * FROM students;
++----+---------+-------+-----+
+| id | s_name  | class | age |
++----+---------+-------+-----+
+|  1 | Abishek |    10 |  16 |
+|  2 | Nishan  |     9 |  15 |
+|  3 | Manish  |     8 |  14 |
+|  4 | Nima    |     8 |  13 |
+|  5 | Sita    |     6 |  12 |
++----+---------+-------+-----+
+5 rows in set (0.00 sec)
+
+mysql> exit
+Bye
+(base) abisheklimbu@Abisheks-MacBook-Air ~ % mysql -u abishek -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 14
+Server version: 8.0.37 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| performance_schema |
++--------------------+
+2 rows in set (0.00 sec)
+
+mysql> USE SCHOOL;
+ERROR 1044 (42000): Access denied for user 'abishek'@'localhost' to database 'school'
+mysql> 
